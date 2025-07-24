@@ -43,7 +43,7 @@ const createHandler =
 	(type?: ToastType): ToastHandler =>
 	(message, options) => {
 		const toast = createToast(message, type, options);
-		upsert(toast);
+		upsert(toast as Toast);
 		return toast.id;
 	};
 

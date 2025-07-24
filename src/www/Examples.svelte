@@ -1,6 +1,9 @@
 <script lang="ts">
+	import { cn } from '$lib/core/utils';
+	import { Highlight, HighlightSvelte } from 'svelte-highlight';
 	import Copy from './Copy.svelte';
 	import examples, { type Example } from './examples';
+	import { javascript } from 'svelte-highlight/languages';
 
 	let selected: Example['title'] | null = $state('Success');
 </script>
@@ -9,8 +12,10 @@
 	{#each examples as example (example.title)}
 		<label
 			for={example.title}
-			class="cursor-pointer p-2 bg-gray-100 hover:border-blue-500 rounded-xl transition-colors border-2 border-transparent"
-			class:_sft-checked={example.title === selected}
+			class={cn(
+				'cursor-pointer p-2 bg-gray-100 hover:border-blue-500 rounded-xl transition-colors border-2 border-transparent',
+				example.title === selected && 'border-blue-500 font-bold'
+			)}
 		>
 			<input
 				type="radio"
@@ -30,19 +35,21 @@
 {#each examples as example}
 	<div class:hidden={example.title !== selected}>
 		<div class="overflow-auto">
-			<pre class="language-{example.html ? 'svelte' : 'javascript'} h-80 table w-full"><code
+			{#if example.html}
+				<HighlightSvelte code={example.snippet} />
+			{:else}
+				<Highlight language={javascript} code={example.snippet} />
+			{/if}
+			<!-- <pre class="language-{example.html ? 'svelte' : 'javascript'} h-80 table w-full"><code
 					class="table-cell align-middle">{example.snippet}</code
-				></pre>
+				></pre> -->
 		</div>
 		<Copy text={example.snippet} />
 	</div>
 {/each}
 
-<style lang="postcss">
+<style>
 	input[type='radio'] {
-		@apply appearance-none;
-	}
-	._sft-checked {
-		@apply border-blue-500 font-bold;
+		appearance: none;
 	}
 </style>

@@ -1,12 +1,7 @@
 <script lang="ts">
 	import toast_, { type Toast } from '../lib';
 
-	interface Props {
-		toast: Toast;
-		someProp: string;
-	}
-
-	let { toast, someProp }: Props = $props();
+	let { toast, someProp }: { toast: Toast; someProp: string } = $props();
 </script>
 
 <span>

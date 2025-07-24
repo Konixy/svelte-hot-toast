@@ -1,3 +1,6 @@
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
 export const genId = (() => {
 	let count = 0;
 
@@ -19,3 +22,7 @@ export const prefersReducedMotion = (() => {
 		return shouldReduceMotion;
 	};
 })();
+
+export function cn(...inputs: ClassValue[]) {
+	return twMerge(clsx(inputs));
+}

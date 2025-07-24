@@ -13,15 +13,15 @@
 </script>
 
 {#if typeof icon === 'string'}
-	<div class="_sft-animated">{icon}</div>
+	<div class="_sht-animated">{icon}</div>
 {:else if typeof icon !== 'undefined'}
 	{@const IconComponent = icon}
 	<IconComponent />
 {:else if type !== 'blank'}
-	<div class="_sft-indicator">
+	<div class="_sht-indicator">
 		<LoaderIcon {...iconTheme} />
 		{#if type !== 'loading'}
-			<div class="_sft-status">
+			<div class="_sht-status">
 				{#if type === 'error'}
 					<ErrorIcon {...iconTheme} />
 				{:else}
@@ -33,7 +33,7 @@
 {/if}
 
 <style>
-	._sft-indicator {
+	._sht-indicator {
 		position: relative;
 		display: flex;
 		justify-content: center;
@@ -42,11 +42,11 @@
 		min-height: 20px;
 	}
 
-	._sft-status {
+	._sht-status {
 		position: absolute;
 	}
 
-	._sft-animated {
+	._sht-animated {
 		position: relative;
 		transform: scale(0.6);
 		opacity: 0.4;

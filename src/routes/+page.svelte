@@ -17,41 +17,23 @@
 	}
 
 	const installers = [
-		{ name: 'NPM', cmd: 'npm install svelte-french-toast' },
-		{ name: 'PNPM', cmd: 'pnpm install svelte-french-toast' },
-		{ name: 'Yarn', cmd: 'yarn add svelte-french-toast' },
-		{ name: 'Bun', cmd: 'bun add svelte-french-toast' }
+		{ name: 'NPM', cmd: 'npm install svelte-hot-toast' },
+		{ name: 'PNPM', cmd: 'pnpm install svelte-hot-toast' },
+		{ name: 'Yarn', cmd: 'yarn add svelte-hot-toast' },
+		{ name: 'Bun', cmd: 'bun add svelte-hot-toast' }
 	];
 	let installer = $state(installers[0].name);
 </script>
 
 <Toaster />
 
-<div class="py-24 bg-[#faf6f4] border-b-4">
+<div class="py-24 border-b-4">
 	<div class="container max-w-xl flex flex-col items-center mx-auto text-center">
-		<img class="h-16 mb-10" src="favicon.png" alt="" />
-		<div
-			class="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-3 mb-10 text-white"
-		>
-			<div
-				class="p-4 text-xl md:text-2xl font-extrabold bg-[#322f35] uppercase tracking-widest rounded-xl -rotate-2 shadow-lg"
-			>
-				Svelte
-			</div>
-			<div
-				class="p-4 text-xl md:text-2xl font-extrabold bg-[#fd6819] uppercase tracking-widest rounded-xl rotate-3 shadow-lg"
-			>
-				French
-			</div>
-			<div
-				class="p-4 text-xl md:text-2xl font-extrabold bg-[#322f35] uppercase tracking-widest rounded-xl -rotate-2 shadow-lg"
-			>
-				Toast
-			</div>
-		</div>
-		<h1 class="font-bold text-3xl md:text-5xl">Buttery smooth toast notifications.</h1>
+		<img class="w-48 mb-10 -mt-48" src="logo.svg" alt="" />
+
+		<h1 class="font-bold text-3xl md:text-5xl">The Best Toast in Town.</h1>
 		<p class="mt-10 text-lg md:text-xl max-w-prose">
-			Lightweight, customizable, and beautiful by default.<br />Inspired by
+			Complete port of
 			<a
 				href="https://react-hot-toast.com"
 				class="font-medium underline decoration-dotted underline-offset-4"
@@ -159,7 +141,8 @@
 	</p>
 </div>
 
-<style lang="postcss">
+<style>
+	@reference '../app.css';
 	:not(pre) > code,
 	pre {
 		@apply p-5 block;

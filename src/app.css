@@ -1,8 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin "tailwindcss-animate";
+@plugin "tailwindcss-motion";
 
 @layer base {
+	body {
+		@apply bg-[#faf6f4];
+	}
+
+	button {
+		@apply cursor-pointer;
+	}
+
 	@font-face {
 		font-family: 'HK Grotesk';
 		src:
@@ -124,8 +133,19 @@
 	}
 }
 
-@layer components {
-	.container {
-		@apply px-3;
-	}
+@theme {
+	--font-sans: 'HK Grotesk', sans-serif;
+	--font-serif: 'Iowan Old Style', serif;
+	--font-mono: 'Menlo', monospace;
+
+	--color-toast-50: #fff6df;
+	--color-toast-100: #fdf7f1;
+	--color-toast-200: #f8eedb;
+	--color-toast-300: #ebbf99;
+	--color-toast-400: #dea373;
+	--color-toast-500: #ce864f;
+	--color-toast-600: #a1724e;
+	--color-toast-700: #8c501c;
+	--color-toast-800: #5c340f;
+	--color-toast-900: #482307;
 }

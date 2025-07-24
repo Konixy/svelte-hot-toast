@@ -1,4 +1,4 @@
-import type { SvelteComponent } from 'svelte';
+import type { Component } from 'svelte';
 
 export type ToastType = 'success' | 'error' | 'loading' | 'blank' | 'custom';
 /** Specifies the toast's position on the screen
@@ -21,7 +21,7 @@ export type ToastPosition =
 	| 'bottom-end';
 
 export type Renderable<T extends Record<string, unknown> = Record<string, unknown>> =
-	| typeof SvelteComponent<T>
+	| Component<T>
 	| string
 	| null;
 

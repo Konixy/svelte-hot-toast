@@ -8,7 +8,7 @@
 	let { toast }: Props = $props();
 </script>
 
-<div class="_sft-message" {...toast.ariaProps}>
+<div class="_sht-message" {...toast.ariaProps}>
 	{#if typeof toast.message === 'string'}
 		{toast.message}
 	{:else}
@@ -18,7 +18,7 @@
 </div>
 
 <style>
-	._sft-message {
+	._sht-message {
 		display: flex;
 		justify-content: center;
 		margin: 4px 10px;

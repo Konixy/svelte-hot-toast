@@ -37,7 +37,7 @@
 </script>
 
 <div
-	class="_sft-toaster {containerClassName || ''}"
+	class="_sht-toaster {containerClassName || ''}"
 	style={containerStyle}
 	onmouseenter={handlers.startPause}
 	onmouseleave={handlers.endPause}
@@ -49,7 +49,7 @@
 </div>
 
 <style>
-	._sft-toaster {
+	._sht-toaster {
 		--default-offset: 16px;
 
 		position: fixed;

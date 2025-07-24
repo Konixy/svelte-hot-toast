@@ -33,9 +33,9 @@
 
 <div
 	bind:clientHeight
-	class="_sft-wrapper"
-	class:_sft-active={toast.visible}
-	class:_sft-transition={!prefersReducedMotion()}
+	class="_sht-wrapper"
+	class:_sht-active={toast.visible}
+	class:_sht-transition={!prefersReducedMotion()}
 	style:--factor={factor}
 	style:--offset={toast.offset}
 	style:top
@@ -50,7 +50,7 @@
 </div>
 
 <style>
-	._sft-wrapper {
+	._sht-wrapper {
 		left: 0;
 		right: 0;
 		display: flex;
@@ -58,15 +58,15 @@
 		transform: translateY(calc(var(--offset, 16px) * var(--factor) * 1px));
 	}
 
-	._sft-transition {
+	._sht-transition {
 		transition: all 230ms cubic-bezier(0.21, 1.02, 0.73, 1);
 	}
 
-	._sft-active {
+	._sht-active {
 		z-index: 9999;
 	}
 
-	._sft-active > :global(*) {
+	._sht-active > :global(*) {
 		pointer-events: auto;
 	}
 </style>

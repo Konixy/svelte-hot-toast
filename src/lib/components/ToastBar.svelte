@@ -29,14 +29,14 @@
 	});
 	let animation: string | undefined = $derived.by(() => {
 		const [enter, exit] = prefersReducedMotion()
-			? ['_sft-fadeIn', '_sft-fadeOut']
-			: ['_sft-enter', '_sft-exit'];
+			? ['_sht-fadeIn', '_sht-fadeOut']
+			: ['_sht-enter', '_sht-exit'];
 		return toast.visible ? enter : exit;
 	});
 </script>
 
 <div
-	class="_sft-base {toast.height ? animation : '_sft-transparent'} {toast.className || ''}"
+	class="_sht-base {toast.height ? animation : '_sht-transparent'} {toast.className || ''}"
 	style="{style}; {toast.style}"
 	style:--factor={factor}
 >
@@ -96,7 +96,7 @@
 		}
 	}
 
-	._sft-base {
+	._sht-base {
 		display: flex;
 		align-items: center;
 		background: #fff;
@@ -112,23 +112,23 @@
 		border-radius: 8px;
 	}
 
-	._sft-transparent {
+	._sht-transparent {
 		opacity: 0;
 	}
 
-	._sft-enter {
+	._sht-enter {
 		animation: enterAnimation 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
 	}
 
-	._sft-exit {
+	._sht-exit {
 		animation: exitAnimation 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
 	}
 
-	._sft-fadeIn {
+	._sht-fadeIn {
 		animation: fadeInAnimation 0.35s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
 	}
 
-	._sft-fadeOut {
+	._sht-fadeOut {
 		animation: fadeOutAnimation 0.4s cubic-bezier(0.06, 0.71, 0.55, 1) forwards;
 	}
 </style>
